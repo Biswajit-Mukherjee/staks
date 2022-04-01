@@ -1,0 +1,315 @@
+/* Utility class styling */
+.new-todo--cta {
+    padding: .5rem 1.25rem;
+    border-radius: 100vh;
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.cta--hover:hover {
+    background-color: var(--clr-prim-500);
+    color: var(--white-prim);
+}
+
+.check {
+    position: relative;
+    background-color: transparent;
+    color: inherit;
+    overflow: hidden;
+}
+
+.check .fa-solid.fa-check {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%) scale(.5);
+    color: var(--clr-prim-100);
+}
+
+.menu__item:hover .check .fa-solid.fa-check {
+    color: var(--clr-prim-300);
+}
+
+.hidden {
+    display: none;
+}
+
+.app-title {
+    display: inline-block;
+    width: fit-content;
+    font-family: var(--ff-acc);
+    font-size: 120%;
+    font-weight: 600;
+    color: var(--clr-prim-500);
+}
+
+.jap-transltd {
+    font-weight: 600;
+}
+
+/* Dark mode styling */
+body.toggle-dark-mode .todo-header,
+body.toggle-dark-mode .todo-footer,
+body.toggle-dark-mode .todo-main .new-todo-form-wrapper {
+    background-color: var(--hf-bg-dark);
+    color: var(--white-prim);
+}
+
+body.toggle-dark-mode .todo-main .summary {
+    border-bottom: 1px solid #3d3d3d;
+}
+
+body.toggle-dark-mode .todo-main .new-todo-form-wrapper {
+    box-shadow: var(--todos-box-shadow-dark);
+}
+
+body.toggle-dark-mode .todo-header .search,
+body.toggle-dark-mode .new-todo-form-wrapper .new-todo-input {
+    --placeholder-text-color: #929292;
+    background-color: #464646;
+    color: var(--white-prim);
+}
+
+body.toggle-dark-mode .todo-header .search__searchbtn--mob,
+body.toggle-dark-mode .todo-header .search--mob--close {
+    color: var(--white-prim);
+}
+
+body.toggle-dark-mode .todo-main {
+    --summary-text-color: var(--summary-text-color-dark);
+    --todos-border-color: #676767;
+    background-color: var(--main-bg-dark);
+    color: var(--white-prim);
+}
+
+body.toggle-dark-mode .todo-main .todos-wrapper .todos {
+    --todo-bg: var(--todo-bg-dark);
+    box-shadow: var(--todos-box-shadow-dark);
+}
+
+body.toggle-dark-mode .modal {
+    --modal-bg: var(--todo-bg-dark);
+    --modal-color: var(--white-prim);
+    --todos-border-color: #676767;
+}
+
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    background: rgba(0, 0, 0, .75);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.overlay.toggle-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Modal styling */
+.modal {
+    width: 90%;
+    max-width: 540px;
+    margin: auto;
+    border-radius: .5rem;
+    background-color: var(--modal-bg);
+    color: var(--modal-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s ease-in-out;
+    z-index: 100000;
+    overflow: hidden;
+}
+
+.modal.show-modal {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__header .modal__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--todos-border-color);
+}
+
+.modal__header .modal-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.modal-title-wrapper .modal-title {
+    font-size: 110%;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.modal-close {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--clr-prim-400);
+    display: flex;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:active {
+    background-color: hsl(249, 69%, 88%);
+    color: var(--clr-prim-500);
+}
+
+.modal-close i {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.modal__body {
+    padding: 1.25rem;
+}
+
+.modal__footer {
+    text-align: center;
+    padding: 1.25rem;
+}
+
+.modal__footer .copyright-msg {
+    display: inline-block;
+    color: var(--clr-prim-400);
+}
+
+/* Todo details modal */
+.todo-info-mod {
+    padding: 1rem;
+}
+
+.info-mod__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-timestamp {
+    color: var(--clr-prim-300);
+    font-weight: 500;
+    font-size: 92.5%;
+}
+
+.todo-edit {
+    background-color: transparent;
+    color: inherit;
+}
+
+.todo-edit:hover,
+.todo-eit:active {
+    color: var(--clr-prim-400);
+}
+
+.info-mod__body {
+    padding: 1.25rem 0;
+}
+
+.todo-textarea:disabled {
+    color: inherit;
+}
+
+.todo-textarea {
+    padding: 0 .5rem;
+    transform: scale(1);
+    border-radius: .25rem;
+    outline: none;
+}
+
+.info-mod-actions {
+    padding: .25rem 0 !important;
+}
+
+/* Confirmation modal styling */
+.conf-mod {    
+    min-height: 240px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header-mod__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid var(--todos-border-color);
+}
+
+.conf-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background-color: transparent;
+    color: var(--clr-prim-400);
+    font-weight: 600;
+}
+
+.conf-mod__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.conf-text {
+    text-align: center;
+    padding: .5rem 1rem;
+    margin: auto;
+}
+
+.conf-actions {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 2.25rem;
+    padding: 1rem;
+}
+
+.conf-btn {
+    width: 100%;
+    height: 100%;
+    padding: .6rem 1.2rem;
+    font-size: 1.025rem;
+    font-weight: 600;
+    border-radius: 100vh;
+    border: 1px solid transparent;
+}
+
+.conf-btn--cancel {
+    background-color: transparent;
+    color: var(--clr-prim-400);
+}
+
+.conf-btn--cancel:hover,
+.conf-btn--cancel:active {
+    background-color: hsl(249, 69%, 87%);
+    color: var(--clr-prim-500);
+}
+
+.conf-btn--confirm {
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+    font-weight: 700;
+}
+
+.conf-btn--confirm:hover,
+.conf-btn--confirm:active {
+    background-color: var(--clr-prim-500);
+    color: var(--white-prim);
+}

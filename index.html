@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suru</title>
+
+    <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Load Fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Load CSS styles -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/util.css">
+
+    <!-- Load Javascript -->
+    <script src="./js/functions.js" defer></script>
+    <script src="./js/app.js" defer></script>
+
+    <!-- Load UUID Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js" defer></script>
+
+    <!-- Load Favicon -->
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+
+    <header class="todo-header">
+        <div class="logo">
+            <div class="menu-icon" title="Toggle menu"><i class="fa-solid fa-bars"></i></div>
+            <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
+            <a class="logo__title" href="./index.html" title="Home">Suru</a>
+        </div>
+
+        <div class="search-wrapper">
+            <div class="search--mob--close" title="Close search"><i class="fa-solid fa-arrow-left"></i></div>
+
+            <div class="search">
+                <div class="search__searchbtn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <input type="text" id="searchbox" class="search__searchbox" placeholder="Search todos" autofocus>
+                <div class="search__clear"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+    
+            <div class="search__searchbtn--mob" title="Search todos"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>        
+    </header>
+
+    <section class="modals">
+        <div class="modal" id="about-app-modal">
+            <div class="modal__header">
+                <div class="modal__actions">
+                    <div class="modal-title-wrapper">
+                        <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
+                        <div class="modal-title">About this app</div>
+                    </div>
+                    <div class="modal-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+            </div>
+    
+            <div class="modal__body">
+                <span title="Japanese for to-do"><span class="app-title">Suru</span> (<span class="jap-transltd">する</span>)</span> is a simple and easy to use web-based to-do application that utilizes the browser's storage for storing to-do lists. It does not store any personal information of the user.
+            </div>
+    
+            <div class="modal__footer">
+                -- <div class="copyright-msg">&copy; Biswajit Mukherjee.</div> --
+            </div>
+        </div>
+
+        <div class="conf-mod modal" id="conf-modal-remove-all">
+            <div class="conf-mod__header">
+                <div class="header-mod__actions">
+                    <div class="conf-title-wrapper">
+                        <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
+                        <div class="conf-title">Remove completed</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="conf-mod__body">
+                <p class="conf-text">This will remove all the completed todos. Continue?</p>
+            </div>
+
+            <div class="conf-mod__footer">
+                <div class="conf-actions">
+                    <button class="conf-btn conf-btn--cancel">Cancel</button>
+                    <button class="conf-btn conf-btn--confirm">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="todo-info-mod modal">
+            <div class="info-mod__header">
+                <div class="todo-timestamp"></div>
+                <button class="todo-edit" title="Edit todo"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+            <div class="info-mod__body">
+                <textarea class="todo-textarea"></textarea>
+            </div>
+            <div class="info-mod__footer">
+                <div class="info-mod-actions conf-actions">
+                    <button class="conf-btn conf-btn--cancel info-mod--cancel">Cancel</button>
+                    <button class="conf-btn conf-btn--confirm info-mod--save">Save</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="todo-main">
+        <section class="menu-wrapper">
+            <nav class="menu--lg">
+                <ul class="menu__items">
+                    <li class="menu__item" id="about-app-option">
+                        <div class="content">
+                            <i class="fa-solid fa-circle-info"></i><span class="item-desc">About app</span>
+                        </div>
+                    </li>
+
+                    <li class="menu__item" id="toggle-dark-mode-option">
+                        <div class="content">
+                            <input type="checkbox" name="themeChkbx" id="themeChkbx" class="hidden">
+                            <i class="fa-solid fa-moon"></i><span class="item-desc"></span>
+                        </div>
+                    </li>
+
+                    <li class="menu__item" id="remove-completed-option">
+                        <div class="content">
+                            <span class="check"><i class="fa-solid fa-trash"></i><i class="fa-solid fa-check"></i></span><span class="item-desc">Remove completed</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="summary">
+                <div class="summary-content">
+                    <div class="summary__msg"></div>
+
+                    <div class="summary__cta">
+                        <button class="new-todo--cta cta--hover" id="new-todo-btn">
+                            <span class="btn-content"><i class="fa-solid fa-plus"></i> NEW TODO</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-todo-form-wrapper">
+                <div class="form--close-wrapper">
+                    <div class="form--close cta--hover" id="new-todo-form-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+
+                <div class="form-content-wrapper">
+                    <div class="new-todo-msg">
+                        <div class="logo__icon new-todo-msg__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
+                        <h2 class="new-todo-msg__header">Add a new todo</h2>
+                    </div>
+    
+                    <form action="" class="new-todo-form" id="new-todo-form">
+                        <input type="text" name="todoTextInput" class="new-todo-input" placeholder="What's on your mind?" required>
+                        <button type="submit" class="form-btn cta--hover">ADD TODO</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="msgs">
+                <div class="default-msg">
+                    <div class="default-msg__icon">¯\_(ツ)_/¯</div>
+                    <div class="default-msg__text">No todos set! Create some to get started :)</div>
+                </div>
+
+                <div class="not-found-msg">
+                    <div class="not-found-msg__icon">(ಥ﹏ಥ)</div>
+                    <div class="not-found-msg__text">No todos found</div>
+                </div>
+            </div>
+
+            <div class="todos-wrapper"></div>
+        </section>
+    </main>
+
+    <footer class="todo-footer">
+        <div class="copyright-msg">&copy; Suru 2022. All rights reserved.</div>
+    </footer>
+</body>
+</html>
