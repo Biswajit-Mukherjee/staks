@@ -10,7 +10,7 @@ A simple and easy to use web-based todo appliation.
  - [Google Chrome Downloads tab](chrome://downloads/)
  - [Logo](https://iconscout.com/icon/layer-1957315)
  - [Icons](https://fontawesome.com/icons)
- - [UUID library](https://github.com/thenativeweb/uuidv4)
+ - [UUID library](https://github.com/uuidjs/uuid)
  
  
 
