@@ -248,16 +248,18 @@ headerSearchBox.addEventListener('input', (e) => {
     })
 
     if (query.length > 0) {
-        let filteredTodos = filterTodos(todos, query)
+        if (todos.length > 0) {
+            let filteredTodos = filterTodos(todos, query)
 
-        if (filteredTodos.length > 0) {
-            clearInnerHTML(todosWrapper)
-            hideNotFoundMessage(messagesContainer, notFoundMessage)
-            renderTodos(todosSummaryMessageContainer, filteredTodos, filters)
-        }   else {
-            clearInnerHTML(todosWrapper)
-            setTextContent(todosSummaryMessageContainer, `${filteredTodos.length} matches`)
-            showNotFoundMessage(messagesContainer, notFoundMessage)
+            if (filteredTodos.length > 0) {
+                clearInnerHTML(todosWrapper)
+                hideNotFoundMessage(messagesContainer, notFoundMessage)
+                renderTodos(todosSummaryMessageContainer, filteredTodos, filters)
+            }   else {
+                clearInnerHTML(todosWrapper)
+                setTextContent(todosSummaryMessageContainer, `${filteredTodos.length} matches`)
+                showNotFoundMessage(messagesContainer, notFoundMessage)
+            }
         }
     }   else {
         hideNotFoundMessage(messagesContainer, notFoundMessage)
