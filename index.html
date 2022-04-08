@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suru</title>
+    <title>Todo Fix</title>
 
     <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +20,12 @@
 
     <!-- Load CSS styles -->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/util.css">
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- Load Javascript -->
-    <script src="./js/functions.js" defer></script>
-    <script src="./js/app.js" defer></script>
+    <script src="./functions.js" defer></script>
+    <script src="./app.js" defer></script>
 
     <!-- Load UUID Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js" defer></script>
@@ -35,87 +35,30 @@
 </head>
 
 <body>
-    <div class="overlay" id="overlay"></div>
+    <div class="overlay hidden" id="overlay"></div>
 
     <header class="todo-header">
-        <div class="logo">
-            <div class="menu-icon" title="Toggle menu"><i class="fa-solid fa-bars"></i></div>
+        <div class="header__logo">
+            <div class="logo__menu--mob"><i class="fa-solid fa-bars"></i></div>
             <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
-            <a class="logo__title" href="./index.html" title="Home">Suru</a>
+            <div class="logo__title">Staks</div>
         </div>
 
-        <div class="search-wrapper">
-            <div class="search--mob--close" title="Close search"><i class="fa-solid fa-arrow-left"></i></div>
-
-            <div class="search">
-                <div class="search__searchbtn"><i class="fa-solid fa-magnifying-glass"></i></div>
-                <input type="text" id="searchbox" class="search__searchbox" placeholder="Search todos" autofocus>
-                <div class="search__clear"><i class="fa-solid fa-xmark"></i></div>
+        <div class="header__search">
+            <div class="search-wrapper">
+                <div class="search">
+                    <div class="search__close--mob"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div class="search__searchbtn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <input type="text" id="searchbox" class="search__searchbox" placeholder="Search todos" autofocus>
+                    <div class="search__clear hidden"><i class="fa-solid fa-xmark"></i></div>
+                </div>
             </div>
-    
-            <div class="search__searchbtn--mob" title="Search todos"><i class="fa-solid fa-magnifying-glass"></i></div>
-        </div>        
+        </div>
+
+        <div class="header__search--mob">
+            <div class="search__searchbtn--mob"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
     </header>
-
-    <section class="modals">
-        <div class="modal" id="about-app-modal">
-            <div class="modal__header">
-                <div class="modal__actions">
-                    <div class="modal-title-wrapper">
-                        <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
-                        <div class="modal-title">About this app</div>
-                    </div>
-                    <div class="modal-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
-                </div>
-            </div>
-    
-            <div class="modal__body">
-                <span title="Japanese for to-do"><span class="app-title">Suru</span> (<span class="jap-transltd">する</span>)</span> is a simple and easy to use web-based to-do application that utilizes the browser's storage for storing to-do lists. It does not store any personal information of the user.
-            </div>
-    
-            <div class="modal__footer">
-                -- <div class="copyright-msg">&copy; Biswajit Mukherjee.</div> --
-            </div>
-        </div>
-
-        <div class="conf-mod modal" id="conf-modal-remove-all">
-            <div class="conf-mod__header">
-                <div class="header-mod__actions">
-                    <div class="conf-title-wrapper">
-                        <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
-                        <div class="conf-title">Remove completed</div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="conf-mod__body">
-                <p class="conf-text">This will remove all the completed todos. Continue?</p>
-            </div>
-
-            <div class="conf-mod__footer">
-                <div class="conf-actions">
-                    <button class="conf-btn conf-btn--cancel">Cancel</button>
-                    <button class="conf-btn conf-btn--confirm">OK</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="todo-info-mod modal">
-            <div class="info-mod__header">
-                <div class="todo-timestamp"></div>
-                <button class="todo-edit" title="Edit todo"><i class="fa-solid fa-pen-to-square"></i></button>
-            </div>
-            <div class="info-mod__body">
-                <textarea class="todo-textarea"></textarea>
-            </div>
-            <div class="info-mod__footer">
-                <div class="info-mod-actions conf-actions">
-                    <button class="conf-btn conf-btn--cancel info-mod--cancel">Cancel</button>
-                    <button class="conf-btn conf-btn--confirm info-mod--save">Save</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <main class="todo-main">
         <section class="menu-wrapper">
@@ -130,13 +73,13 @@
                     <li class="menu__item" id="toggle-dark-mode-option">
                         <div class="content">
                             <input type="checkbox" name="themeChkbx" id="themeChkbx" class="hidden">
-                            <i class="fa-solid fa-moon"></i><span class="item-desc"></span>
+                            <i class="fa-solid fa-moon"></i><span class="item-desc">Dark Mode</span>
                         </div>
                     </li>
 
                     <li class="menu__item" id="remove-completed-option">
                         <div class="content">
-                            <span class="check"><i class="fa-solid fa-trash"></i><i class="fa-solid fa-check"></i></span><span class="item-desc">Remove completed</span>
+                            <i class="fa-solid fa-trash"></i><span class="item-desc">Remove completed</span>
                         </div>
                     </li>
                 </ul>
@@ -144,54 +87,194 @@
         </section>
 
         <section class="content-wrapper">
-            <div class="summary">
-                <div class="summary-content">
-                    <div class="summary__msg"></div>
+            <div class="todos-summary">
+                <div class="content">
+                    <div class="todos-summary__message"></div>
 
-                    <div class="summary__cta">
-                        <button class="new-todo--cta cta--hover" id="new-todo-btn">
+                    <div class="todos-summary__new-todo">
+                        <button class="btn new-todo--cta cta--hover" id="new-todo-btn">
                             <span class="btn-content"><i class="fa-solid fa-plus"></i> NEW TODO</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="new-todo-form-wrapper">
-                <div class="form--close-wrapper">
-                    <div class="form--close cta--hover" id="new-todo-form-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
-                </div>
-
-                <div class="form-content-wrapper">
-                    <div class="new-todo-msg">
-                        <div class="logo__icon new-todo-msg__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
-                        <h2 class="new-todo-msg__header">Add a new todo</h2>
-                    </div>
-    
-                    <form action="" class="new-todo-form" id="new-todo-form">
-                        <input type="text" name="todoTextInput" class="new-todo-input" placeholder="What's on your mind?" required>
-                        <button type="submit" class="form-btn cta--hover">ADD TODO</button>
-                    </form>
-                </div>
+            <!-- Todos Area -->
+            <div class="todos-wrapper">
+                <!-- Todos render area -->
             </div>
 
-            <div class="msgs">
-                <div class="default-msg">
-                    <div class="default-msg__icon">¯\_(ツ)_/¯</div>
-                    <div class="default-msg__text">No todos set! Create some to get started :)</div>
+            <!-- No todo message and Not found message -->
+            <div class="msgs hidden">
+                <div class="no-todos-msg hidden">
+                    <div class="no-todos-msg__icon">¯\_(ツ)_/¯</div>
+                    <div class="no-todos-msg__text">No todos set. Create some to get started :)</div>
                 </div>
-
-                <div class="not-found-msg">
-                    <div class="not-found-msg__icon">(ಥ﹏ಥ)</div>
+        
+                <div class="not-found-msg hidden">
+                    <div class="not-found-msg__icon">¯\(°_o)/¯</div>
                     <div class="not-found-msg__text">No todos found</div>
                 </div>
             </div>
 
-            <div class="todos-wrapper"></div>
+            <!-- Modals and confirmation popups -->
+            <div class="modals">
+                <!-- New todo creation modal -->
+                <div class="modal" id="new-todo-modal">
+                    <div class="modal__header">
+                        <div class="modal-title">
+                            <div class="modal__header-icon">
+                                <img src="./img/logo.ico" alt="logo-image" class="logo-img">
+                            </div>
+                    
+                            <div class="modal__header-title">NEW TODO</div>
+                        </div>
+                    
+                        <div class="modal-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+
+                    <div class="modal__body">
+                        <form action="" class="new-todo-form" id="new-todo-form">
+                            <div class="form-element">
+                                <div class="new-todo-form-msg">What's on your mind?</div>
+                                <input type="text" name="todoInput" class="todo-input" id="todo-input-text" required autofocus>
+                                <div class="form-btn">
+                                    <button class="btn form-btn--submit cta--hover">ADD TODO</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Remove completed todos modal -->
+                <div class="modal modal--conf" id="remove-all-conf-modal">
+                    <div class="modal__header">
+                        <div class="modal-title">
+                            <div class="modal__header-icon">
+                                <img src="./img/logo.ico" alt="logo-image" class="logo-img">
+                            </div>
+                    
+                            <div class="modal__header-title">Remove completed</div>
+                        </div>
+                    </div>
+
+                    <div class="modal__body">
+                        <div class="modal--conf-text">Remove all completed todos?</div>
+                    </div>
+
+                    <div class="modal__actions">
+                        <button class="btn modal__action modal__action--cancel">Cancel</button>
+                        <button class="btn modal__action modal__action--confirm cta--hover">OK</button>
+                    </div>
+                </div>
+
+                <!-- Edit todo text modal -->
+                <div class="modal todo-info-modal" id="todo-info-modal">
+                    <div class="info-modal__header">
+                        <div class="todo-timestamp"></div>
+                        <button class="todo-edit" title="Edit todo"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+
+                    <div class="info-modal__body">
+                        <textarea class="todo-textarea"></textarea>
+                        <div class="todo-status">
+                            <div class="todo-status__label">Todo status:</div>
+                            <div class="todo-status__value"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-modal__actions">
+                        <button class="btn modal__action modal__action--cancel">Cancel</button>
+                        <button class="btn modal__action modal__action--confirm cta--hover">Save</button>
+                    </div>
+                </div>
+
+                <!-- About app -->
+                <div class="modal" id="about-app-modal">
+                    <div class="modal__header">
+                        <div class="modal-title">
+                            <div class="modal__header-icon">
+                                <img src="./img/logo.ico" alt="logo-image" class="logo-img">
+                            </div>
+                    
+                            <div class="modal__header-title">About App</div>
+                        </div>
+                    
+                        <div class="modal-close" title="Close"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+
+                    <div class="modal__body">
+                        <div class="content">
+                            <strong class="app-title">Staks</strong> is a simple and easy to use web-based to-do application that utilizes the browser's storage for storing to-do lists. It does not store any personal information of the user.
+                        </div>
+                    </div>
+
+                    <div class="modal__footer">
+                        <div class="footer__copyright-msg">&copy; <span class="highlight">Staks</span> 2022. Version 2.0.0.</div>
+                    </div>
+                </div>
+
+                <!-- Todo created successfully notifictaion modal -->
+                <div class="modal nm--modal nm--modal--success" id="todo-creation-success-nm">
+                    <div class="nm__body">
+                        <div class="body__icon">
+                            <div class="logo__icon"><i class="fa-regular fa-5x fa-circle-check"></i></div>
+                        </div>
+
+                        <div class="body__content">
+                            <p class="content__description">Todo created successfully!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Todo deleted successfully notifictaion modal -->
+                <div class="modal nm--modal nm--modal--success" id="todo-deletion-success-nm">
+                    <div class="nm__body">
+                        <div class="body__icon">
+                            <div class="logo__icon"><i class="fa-regular fa-5x fa-circle-check"></i></div>
+                        </div>
+
+                        <div class="body__content">
+                            <p class="content__description">Todo deleted successfully!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed todos deleted successfully notifictaion modal -->
+                <div class="modal nm--modal nm--modal--success" id="todo-completed-all-deletion-success-nm">
+                    <div class="nm__body">
+                        <div class="body__icon">
+                            <div class="logo__icon"><i class="fa-regular fa-5x fa-circle-check"></i></div>
+                        </div>
+
+                        <div class="body__content">
+                            <p class="content__description">All completed todos deleted successfully!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Greeting message modal -->
+                <div class="modal gm--modal" id="gm-modal">
+                    <div class="gm__body">
+                        <div class="body__icon">
+                            <div class="logo__icon"><img src="./img/logo.ico" alt="logo-image" class="logo-img"></div>
+                        </div>
+
+                        <div class="body__content">
+                            <h2 class="content__title">Welcome to <strong class="app-title">Staks</strong> !</h2>
+                            <p class="content__description">A simple and easy to use web-based todo appliation.</p>
+                        </div>
+                        
+                        <div class="body__action">
+                            <button class="btn get-started-btn cta--hover" id="get-started-button">
+                                Get Started <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-
-    <footer class="todo-footer">
-        <div class="copyright-msg">&copy; Suru 2022. All rights reserved.</div>
-    </footer>
 </body>
+
 </html>

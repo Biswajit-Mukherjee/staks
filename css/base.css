@@ -1,52 +1,108 @@
 :root {
+    /* Fonts */
     --ff-prim: 'Inter', sans-serif;
     --ff-acc: 'Quicksand', sans-serif;
+
+    /* Header and Footer */
+    --header-height: 62px;
+    --header-pad-x: 1rem;
+    --search-wrapper-height: 46px; 
+    --searchbox-height: 20px;
     --searchbox-max-width: 720px;
+    --msgs-color: #696969;
+    --logo-sz: 2rem;
+
+    /* Primary and secondary colors */
+    --white-prim: #fff;
+    --white-sec: #f5f5f5;
+    --white-ter: #f0f0f0;
+    --header-bg-light: var(--white-prim);
+    --header-bg-dark: hsl(0, 0%, 7%);
+    --header-bg: var(--header-bg-light);
+    --main-bg-light: hsl(0, 0%, 98%);
+    --main-bg-dark: hsl(0, 0%, 17%);
+    --main-bg: var(--main-bg-light);
+    --primary-bg-light: var(--white-prim);
+    --primary-bg-dark: #232323;
+    --primary-bg: var(--primary-bg-light);
+    --primary-color-light: #171717;
+    --primary-color-dark: var(--white-prim);
+    --primary-color: var(--primary-color-light);
+
+    /* Placeholder */
+    --placeholder-text-color: var(--msgs-color);
+
+    /* Modals and Overlay */
+    --modal-border-color: var(--summary-border);
+    --modal-close-bg-light: #b6b6b6;
+    --modal-close-bg-dark: #646464;
+    --modal-close-bg: var(--modal-close-bg-light);
+    --modal-max-width: 540px;
+    --modal-min-height: 224px;
+    --modal-logo-sz: var(--logo-sz);
+    --modal-border-radius: var(--todos-border-radius);
+    --modal-bg: var(--main-bg-light);
+    --modal-color: var(--primary-color-light);
+    --modal-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 3px 6px 1px rgba(var(--todos-shadow-color-rgb), .15);
+    --todo-input-bg: var(--main-bg-light);
+    --todo-input-color: var(--primary-color);
+
+    /* Todos */
+    --summary-border-light: #cbcbcb;
+    --summary-border-dark: #3d3d3d;
+    --summary-border: var(--summary-border-light);
+    --todo-bg-light: hsl(0, 0%, 90%);
+    --todo-bg-dark: hsl(0, 0%, 19%);
+    --todo-bg: var(--todo-bg-light);
+    --todo-actions-bg-light: hsl(0, 0%, 94%);
+    --todo-actions-bg-dark: hsl(0, 0%, 26%);
+    --todo-actions-bg: var(--todo-actions-bg-light);
+    --todo-actions-color: var(--primary-color);
+    --todo-completed-bg-light: rgba(230, 230, 230, .6);
+    --todo-completed-bg-dark: rgba(105, 105, 105, .4);
+    --todo-completed-bg: var(--todo-completed-bg-light);
+    --todos-max-width: 924px;
+    --todos-border-radius: .5rem;
+    --todos-border-color: var(--modal-border-color);
+    --todos-bg-light: var(--header-bg-light);
+    --todos-bg-dark: hsl(0, 0%, 24%);
+    --todos-bg: var(--todos-bg-light);
+    --todo-height: 4rem;
+    --todo-icon-sz: 1.5rem;
+    --todo-border-radius: calc(var(--todos-border-radius) / 2);
+    --todo-icon-border-color-light: #b3b3b3;
+    --todo-icon-border-color-dark: var(--modal-border-color);
+    --todo-icon-border-color: var(--todo-icon-border-color-light);
+    --todo-max-width: var(--todos-max-width);
+    --todos-shadow-color-rgb: 50, 54, 57;
+    --todos-shadow-color-rgb-dark: 0, 4, 7;
+    --todos-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 1px 4px 0 rgba(var(--todos-shadow-color-rgb), .15);
+    --todos-box-shadow-dark: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 1px 3px 1px rgba(var(--todos-shadow-color-rgb-dark), .15);
+
+
+    --todo-text-color: hsl(240, 30%, 10%);
+    --todo-content-gap: 1rem;
     --header-padding-inline: 1rem;
     --header-padding-block: .5rem;
     --header-padding: var(--header-padding-block) var(--header-padding-inline);
     --header-height: 4rem;
     --menu-width: calc(100% + var(--header-padding-inline)/2);
-    --logo-size: 2rem;
-    --white-prim: #fff;
-    --white-sec: #f5f5f5;
-    --white-ter: #f0f0f0;
-    --hf-bg-light: var(--white-prim);
-    --hf-bg-dark: hsl(0, 0%, 7%);
-    --main-bg-light: #fbfbfb;
-    --main-bg-dark: hsl(0, 0%, 15%);
+
     --main-padding-top: 4rem;
-    --primary-color-light: #171717;
     --summary-text-color-light: #ffb227;
     --summary-text-color-dark: #ffd78c;
     --summary-text-color: var(--summary-text-color-light);
-    --placeholder-text-color: #737373;
-    /* --clr-todo-completed: hsl(240, 100%, 90%); */
+    
     --clr-todo-completed: hsl(150, 95%, 75%);
-    /* --clr-todo-completed: #00e7bf; */
     --clr-todo-options: #aaf;
     --clr-prim-100: #99f;
     --clr-prim-200: #88f;
     --clr-prim-300: #77f;
     --clr-prim-400: #7765e3;
     --clr-prim-500: hsl(249, 69%, 59%);
-    --clr-prim-600: hsl(249, 69%, 49%);
-    --todos-border-color: #d3d3d3;
-    --todo-min-height: 62px;
-    --todos-max-width: 864px;
-    --todos-shadow-color-rgb: 60, 64, 67;
-    --todos-shadow-color-rgb-dark: 0, 4, 7;
-    --todos-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 1px 3px 1px rgba(var(--todos-shadow-color-rgb), .15);
-    --todos-box-shadow-dark: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 1px 3px 1px rgba(var(--todos-shadow-color-rgb-dark), .15);
-    --modal-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 3px 6px 1px rgba(var(--todos-shadow-color-rgb), .15);
-    --todo-bg-light: var(--white-prim);
-    /* --todo-bg-dark: hsl(250, 6%, 21%); */
-    --todo-bg-dark: hsl(0, 0%, 23%);
-    --todo-bg: var(--todo-bg-light);
-    --todo-text-color: hsl(240, 30%, 10%);
-    --todo-content-gap: 1rem;
-    --modal-bg: var(--todo-bg-light);
-    --modal-color: var(--primary-color-light)
+    --clr-prim-600: hsl(249, 69%, 50%);
+    
+    --nm-success: hsl(145, 95%, 57%);
 }
 
 *, *::before, *::after {
@@ -57,16 +113,20 @@
 
 html {
     width: 100%;
+    height: 100%;
     min-height: 100vh;
     scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    min-height: 100%;
-    font: 400 100%/1.54 var(--ff-prim);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    min-height: inherit;
+    font: 500 100%/1.54 var(--ff-prim);
+    font-style: normal;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -80,6 +140,7 @@ input {
     font: inherit;
     border: none;
     outline: none;
+    line-height: normal;
 }
 
 li {
@@ -93,6 +154,7 @@ a {
 
 button {
     font: inherit;
+    outline: none;
     border: none;
     color: inherit;
     cursor: pointer;
@@ -100,19 +162,23 @@ button {
 }
 
 button:disabled {
-    background-color: #ddd;
+    background-color: #ccc !important;
     cursor: not-allowed;
 }
 
 button:disabled:hover {
-    background-color: #bbb;
+    background-color: #bbb !important;
 }
 
 textarea {
     width: 100%;
     height: fit-content;
     resize: none;
-    /* background-color: inherit;
-    color: inherit; */
     font: inherit;
+    line-height: normal;
+}
+
+textarea:disabled {
+    background-color: #ddd !important;
+    color: #777 !important;
 }

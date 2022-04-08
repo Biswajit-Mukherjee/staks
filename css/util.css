@@ -1,202 +1,281 @@
-/* Utility class styling */
-.new-todo--cta {
-    padding: .5rem 1.25rem;
-    border-radius: 100vh;
-    background-color: var(--clr-prim-400);
-    color: var(--white-prim);
-    font-weight: 500;
-    overflow: hidden;
-}
-
-.cta--hover:hover {
-    background-color: var(--clr-prim-500);
-    color: var(--white-prim);
-}
-
-.check {
-    position: relative;
-    background-color: transparent;
-    color: inherit;
-    overflow: hidden;
-}
-
-.check .fa-solid.fa-check {
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    font-size: 1.5rem;
-    transform: translate(-50%, -50%) scale(.5);
-    color: var(--clr-prim-100);
-}
-
-.menu__item:hover .check .fa-solid.fa-check {
-    color: var(--clr-prim-300);
-}
-
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+.btn {
+    text-align: center;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    font-weight: 500;
 }
 
 .app-title {
-    display: inline-block;
-    width: fit-content;
     font-family: var(--ff-acc);
-    font-size: 120%;
-    font-weight: 600;
-    color: var(--clr-prim-500);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--clr-prim-400);
+    line-height: normal;
 }
 
-.jap-transltd {
-    font-weight: 600;
+#gm-modal .app-title {
+    font-size: inherit;
 }
 
-/* Dark mode styling */
-body.toggle-dark-mode .todo-header,
-body.toggle-dark-mode .todo-footer,
-body.toggle-dark-mode .todo-main .new-todo-form-wrapper {
-    background-color: var(--hf-bg-dark);
-    color: var(--white-prim);
+.highlight {
+    font-family: var(--ff-acc);
+    font-size: 110%;
+    font-weight: 700;
+    color: var(--clr-prim-400);
 }
 
-body.toggle-dark-mode .todo-main .summary {
-    border-bottom: 1px solid #3d3d3d;
+.cta--hover:hover,
+.cta--hover:active {
+    background-color: var(--clr-prim-500) !important;
 }
 
-body.toggle-dark-mode .todo-main .new-todo-form-wrapper {
-    box-shadow: var(--todos-box-shadow-dark);
-}
-
-body.toggle-dark-mode .todo-header .search,
-body.toggle-dark-mode .new-todo-form-wrapper .new-todo-input {
-    --placeholder-text-color: #929292;
-    background-color: #464646;
-    color: var(--white-prim);
-}
-
-body.toggle-dark-mode .todo-header .search__searchbtn--mob,
-body.toggle-dark-mode .todo-header .search--mob--close {
-    color: var(--white-prim);
-}
-
-body.toggle-dark-mode .todo-main {
-    --summary-text-color: var(--summary-text-color-dark);
-    --todos-border-color: #676767;
-    background-color: var(--main-bg-dark);
-    color: var(--white-prim);
-}
-
-body.toggle-dark-mode .todo-main .todos-wrapper .todos {
-    --todo-bg: var(--todo-bg-dark);
-    box-shadow: var(--todos-box-shadow-dark);
-}
-
-body.toggle-dark-mode .modal {
-    --modal-bg: var(--todo-bg-dark);
-    --modal-color: var(--white-prim);
-    --todos-border-color: #676767;
-}
-
-/* Overlay styling */
-.overlay {
+/* Overlay and modals styling */
+.overlay,
+.actions-overlay {
     position: fixed;
     top: 0;
     left: 0;
+    display: block;
     width: 100%;
     height: 100%;
-    z-index: 5000;
-    background: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 100;
     pointer-events: none;
-    opacity: 0;
 }
 
-.overlay.toggle-overlay {
+.actions-overlay {
+    opacity: 0;
+    background-color: transparent;
+}
+
+.actions-overlay.show {
     opacity: 1;
     pointer-events: all;
 }
 
-/* Modal styling */
 .modal {
-    width: 90%;
-    max-width: 540px;
+    width: 96%;
+    max-width: var(--modal-max-width);
+    min-height: var(--modal-min-height);
     margin: auto;
-    border-radius: .5rem;
+    border-radius: var(--modal-border-radius);
+    box-shadow: var(--modal-box-shadow);
     background-color: var(--modal-bg);
     color: var(--modal-color);
-    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 1000;
     transform: translate(-50%, -50%) scale(0);
     transition: transform .3s ease-in-out;
-    z-index: 100000;
-    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-.modal.show-modal {
+.modal.modal--conf {
+    min-height: 180px;
+}
+
+.modal.show {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.modal__header .modal__actions {
+.modal > * {
+    padding: .5rem 1rem;
+}
+
+.modal .modal__header {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: .75rem 1rem;
-    border-bottom: 1px solid var(--todos-border-color);
+    border-bottom: 1px solid var(--modal-border-color);
 }
 
-.modal__header .modal-title-wrapper {
+.modal .modal__header .modal-title {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: .5rem;
+    color: var(--clr-prim-300);
+    font-weight: 600;
+    height: var(--modal-logo-sz);
 }
 
-.modal-title-wrapper .modal-title {
-    font-size: 110%;
-    font-weight: 500;
-    vertical-align: middle;
+.modal .modal__header .modal-title .modal__header-icon {
+    width: var(--modal-logo-sz);
+    height: var(--modal-logo-sz);
 }
 
-.modal-close {
+.modal .modal__header .modal-title .modal__header-title {
+    padding: 6px;
+}
+
+.modal .modal__header .modal-close {
     width: 2rem;
     height: 2rem;
+    display: flex;
     border-radius: 50%;
     background-color: transparent;
-    color: var(--clr-prim-400);
-    display: flex;
+    color: inherit;
     cursor: pointer;
 }
 
-.modal-close:hover,
-.modal-close:active {
-    background-color: hsl(249, 69%, 88%);
-    color: var(--clr-prim-500);
+.modal .modal__header .modal-close:hover,
+.modal .modal__header .modal-close:active {
+    background-color: var(--modal-close-bg);
 }
 
-.modal-close i {
-    width: fit-content;
-    height: fit-content;
+.modal .modal__header .modal-close i {
+    font-size: 1rem;
     margin: auto;
 }
 
-.modal__body {
-    padding: 1.25rem;
-}
-
-.modal__footer {
+.modal .modal__body {
     text-align: center;
-    padding: 1.25rem;
-}
-
-.modal__footer .copyright-msg {
-    display: inline-block;
-    color: var(--clr-prim-400);
-}
-
-/* Todo details modal */
-.todo-info-mod {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-weight: 400;
     padding: 1rem;
 }
 
-.info-mod__header {
+.modal .modal__body > * {
+    width: 100%;
+    margin: auto;
+}
+
+.modal .modal__body .new-todo-form .form-element .new-todo-form-msg {
+    padding-bottom: 1.25rem;
+    font-size: 1.10rem;
+    color: #646464;
+}
+
+.modal .modal__body .new-todo-form .form-element .todo-input {
+    outline: none;
+    border-radius: .25rem;
+    outline: 1px solid var(--modal-border-color);
+    border: 2px solid transparent;
+    padding: .5rem .75rem;
+    font-weight: 500;
+    background-color: var(--todo-input-bg);
+    color: inherit;
+}
+
+.modal .modal__body .new-todo-form .form-element .todo-input:focus {
+    outline: 1px solid transparent;
+    border: 2px solid  var(--clr-prim-300);
+}
+
+.modal .modal__body .new-todo-form .form-element .form-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 1rem;
+}
+
+.modal .modal__body .new-todo-form .form-element .form-btn .form-btn--submit {
+    padding: .65rem 1.3rem;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: .25rem;
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+    margin-left: auto;
+}
+
+.modal.modal--conf .modal__actions {
+    gap: 1.5rem;
+}
+
+.modal.modal--conf .modal__body .modal--conf-text {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.modal.modal--conf .modal__actions .modal__action {
+    padding: .4rem 1.6rem;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: .25rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: var(--clr-prim-400);
+}
+
+.modal.modal--conf .modal__actions .modal__action.modal__action--confirm {
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+}
+
+.modal.modal--conf .modal__actions .modal__action.modal__action--cancel:hover,
+.modal.modal--conf .modal__actions .modal__action.modal__action--cancel:active,
+.todo-info-modal .info-modal__actions .modal__action--cancel:hover,
+.todo-info-modal .info-modal__actions .modal__action--cancel:active {
+    border-color: var(--clr-prim-400);
+}
+
+.modal__footer {
+    display: inline-block;
+    padding: 1.25rem;
+}
+
+.modal__footer .footer__copyright-msg {
+    width: 100%;
+    text-align: center;
+    font-size: 90%;
+    font-weight: 400;
+}
+
+.modal .modal__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .75rem 1rem;
+    font-size: 1.125rem;
+}
+
+.modal .modal__actions .modal__action {
+    padding: .5rem 1rem;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: .25rem;
+}
+
+.modal .modal__actions .modal__action.modal__action--submit {
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+}
+
+.modal .modal__actions .modal__action.modal__action--submit:focus,
+.modal .modal__actions .modal__action.modal__action--confirm:focus,
+.modal .modal__body .new-todo-form .form-element .form-btn .form-btn--submit:focus,
+.todo-info-modal .info-modal__actions .modal__action--confirm:focus {
+    outline: 3px solid var(--clr-prim-500);
+    outline-offset: 3px;
+    background-color: var(--clr-prim-500);
+}
+
+/* Todo details modal */
+.todo-info-modal {
+    padding: 1rem;
+}
+
+.todo-info-modal > * {
+    padding: 0;
+}
+
+.info-modal__header {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -205,8 +284,8 @@ body.toggle-dark-mode .modal {
 
 .todo-timestamp {
     color: var(--clr-prim-300);
-    font-weight: 500;
-    font-size: 92.5%;
+    font-weight: 600;
+    font-size: 90%;
 }
 
 .todo-edit {
@@ -219,97 +298,190 @@ body.toggle-dark-mode .modal {
     color: var(--clr-prim-400);
 }
 
-.info-mod__body {
-    padding: 1.25rem 0;
+.info-modal__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.todo-textarea:disabled {
-    color: inherit;
-}
-
-.todo-textarea {
-    padding: 0 .5rem;
+.info-modal__body .todo-textarea {
+    margin: auto;
+    padding: 0 .25rem;
     transform: scale(1);
     border-radius: .25rem;
     outline: none;
+    resize: none;
 }
 
-.info-mod-actions {
-    padding: .25rem 0 !important;
+.info-modal__body .todo-textarea:disabled {
+    color: inherit;
 }
 
-/* Confirmation modal styling */
-.conf-mod {    
-    min-height: 240px;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
-.header-mod__actions {
+.info-modal__body .todo-status {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: .5rem 1rem;
-    border-bottom: 1px solid var(--todos-border-color);
+    font-weight: 400;
 }
 
-.conf-title-wrapper {
+.info-modal__body .todo-status .todo-status__value {
+    padding: 0 .25rem;
+    font-weight: 600;
+    color: inherit;
+}
+
+.info-modal__body .todo-status .todo-status__value.status--done {
+    color: #04e763;
+}
+
+.info-modal__body .todo-status .todo-status__value.status--pending {
+    color: #dc8126;
+}
+
+.info-modal__actions {
     display: flex;
+    flex-flow: row nowrap;
     align-items: center;
-    gap: .5rem;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.todo-info-modal .info-modal__actions .modal__action {
+    padding: .4rem 1.6rem;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: .25rem;
+    border: 1px solid transparent;
     background-color: transparent;
     color: var(--clr-prim-400);
-    font-weight: 600;
 }
 
-.conf-mod__body {
+.todo-info-modal .info-modal__actions .modal__action--confirm {
+    background-color: var(--clr-prim-400);
+    color: var(--white-prim);
+}
+
+/* Greetings modal */
+.gm--modal,
+.nm--modal {
+    min-height: var(--modal-min-height);
+}
+
+.gm--modal .gm__body,
+.nm--modal .nm__body {
+    width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.conf-text {
-    text-align: center;
-    padding: .5rem 1rem;
-    margin: auto;
-}
-
-.conf-actions {
-    display: flex;
     align-items: center;
-    justify-content: baseline;
-    gap: 2.25rem;
+    min-height: inherit;
+    text-align: center;
     padding: 1rem;
 }
 
-.conf-btn {
+.gm--modal .gm__body .body__icon
+.gm--modal .gm__body .body__content,
+.gm--modal .gm__body .body__action,
+.nm--modal .nm__body .body__icon,
+.nm--modal .nm__body .body__content {
+    width: 100%;
+    flex: 1;
+}
+
+.gm--modal .gm__body .body__icon .logo__icon {
+    display: block;
     width: 100%;
     height: 100%;
-    padding: .6rem 1.2rem;
-    font-size: 1.025rem;
-    font-weight: 600;
-    border-radius: 100vh;
-    border: 1px solid transparent;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: auto;
 }
 
-.conf-btn--cancel {
-    background-color: transparent;
-    color: var(--clr-prim-400);
+.gm--modal .gm__body .body__content {
+    width: 100%;
+    font-weight: 400;
+    padding: 1rem 0;
 }
 
-.conf-btn--cancel:hover,
-.conf-btn--cancel:active {
-    background-color: hsl(249, 69%, 87%);
-    color: var(--clr-prim-500);
+.gm--modal .gm__body .body__content .content__title {
+    font-size: 250%;
+    font-weight: 400;
+    height: 50px;
+    line-height: normal;
 }
 
-.conf-btn--confirm {
+.gm--modal .gm__body .body__content .content__description {
+    padding: .25rem 0 .75rem;
+}
+
+.gm--modal .gm__body .body__action {
+    padding-bottom: .25rem;
+    margin: auto;
+}
+
+.gm--modal .gm__body .body__action .get-started-btn {
+    /* width: 80%; */
+    border: none;
     background-color: var(--clr-prim-400);
     color: var(--white-prim);
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: .6rem 1.2rem;
 }
 
-.conf-btn--confirm:hover,
-.conf-btn--confirm:active {
-    background-color: var(--clr-prim-500);
-    color: var(--white-prim);
+.gm--modal .gm__body .body__action .get-started-btn i {
+    font-size: 1rem;
+}
+
+/* Notifictaion modals styling */
+.nm--modal .body__icon {
+    display: flex;
+}
+
+.nm--modal .body__icon .logo__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    color: var(--nm-success);
+}
+
+/* Dark mode styling */
+body.dark-mode-on {
+    --header-bg: var(--header-bg-dark);
+    --main-bg: var(--main-bg-dark);
+    --primary-color: var(--primary-color-dark);
+    --summary-border: var(--summary-border-dark);
+    --modal-bg: var(--main-bg-dark);
+    --modal-border-color: var(--summary-border);
+    --todos-border-color: var(--modal-border-color);
+    --todos-bg: var(--todos-bg-dark);
+    --todos-box-shadow: var(--todos-box-shadow-dark);
+    --modal-color: var(--primary-color-dark);
+    --modal-close-bg: var(--modal-close-bg-dark);
+    --todo-input-bg: var(--header-bg-dark);
+    --todo-bg: var(--todo-bg-dark);
+    --todo-icon-border-color-dark: #242424;
+    --todo-icon-border-color: var(--todo-icon-border-color-dark);
+    --todo-actions-bg: var(--todo-actions-bg-dark);
+    --todo-actions-color: var(--primary-color);
+    --todo-completed-bg: var(--todo-completed-bg-dark);
+}
+
+/* Mobile styling */
+@media (max-width: 480px) {
+    .gm--modal .gm__body .body__content .content__title {
+        font-size: 200%;
+    }
+}
+
+@media (max-width: 360px) {
+    .gm--modal .gm__body .body__content .content__title {
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 280px) {
+    .gm--modal .gm__body .body__content .content__title {
+        font-size: 125%;
+    }
 }
