@@ -57,11 +57,11 @@ For support, email biswajitmukherjee549@gmail.com.
 
 ## Lessons Learned
 
-1. Implementing responsive web layouts using HTML & CSS
-2. Adding user interactions using Javascript
-3. Integrating app with backend using broswer localStorage
-4. Solving real world problems using Data Structures
-5. Implementing Dark mode
-6. Integrating app with third-party libraries
+- Implementing responsive web layouts using HTML & CSS
+- Adding user interactions using Javascript
+- Integrating app with backend using broswer localStorage
+- Solving real world problems using Data Structures
+- Implementing Dark mode
+- Integrating app with third-party libraries
 
 
