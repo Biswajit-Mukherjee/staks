@@ -53,9 +53,9 @@ Light mode
 
 ## Tech Stack
 
-**Client:** HTML5, CSS3, Javascript ES6
+**Client:** HTML5, CSS3, Javascript ES6, Web Storage API
 
-**Server:** Web Storage API (localStorage)
+**Server:** Github Pages
 
 
 ## Support
