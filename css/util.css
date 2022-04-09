@@ -306,6 +306,7 @@
 
 .info-modal__body .todo-textarea {
     margin: auto;
+    min-height: 5rem;
     padding: 0 .25rem;
     transform: scale(1);
     border-radius: .25rem;
