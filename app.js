@@ -145,6 +145,7 @@ newTodoButton.addEventListener('click', () => {
         const todoText = getTrimmedValue(todoInputText.value)
 
         const currentDate = getCurrentDate()
+        const dayOfWeek = currentDate.dayOfWeek
         const currentMonth = currentDate.month
         const currentDay = currentDate.day
         const currentYear = currentDate.year

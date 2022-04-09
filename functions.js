@@ -127,8 +127,9 @@ const getCurrentDate = () => {
     day = day.length > 1 ? day : `0${day}`
 
     return {
-        day: day,
+        dayOfWeek: dayOfWeek,
         month: month,
+        day: day,
         year: year
     }
 }
@@ -206,6 +207,7 @@ const createNewTodosArrItem = (itemContent) => {
 
 // Get todos object id
 const getTodosObjectId = (id) => {
+    // console.log(`${id.slice(0, 3)}, ${id.slice(4, 7)} ${id.slice(8, 10)}, ${id.slice(11)}`)
     return `${id.slice(0, 3)} ${id.slice(4, 6)}, ${id.slice(7)}`
 }
 
