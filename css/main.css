@@ -345,9 +345,10 @@
 }
 
 .todos .todos__timestamp .timestamp__id {
-    font-size: 105%;
-    font-weight: 600;
+    font-size: 107.5%;
+    font-weight: 500;
     color: var(--clr-prim-400);
+    letter-spacing: .035px;
 }
 
 .todos .todos__timestamp .timestamp__pending-todos {

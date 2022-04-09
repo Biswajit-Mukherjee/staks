@@ -120,7 +120,20 @@ const getCurrentDate = () => {
     const dayOfWeek = d.toString().slice(0, 3)
 
     let day = d.getDate()
-    const months =["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    const months =[
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ]
     const month = months[d.getMonth()]
     const year = d.getFullYear()
 
@@ -207,8 +220,9 @@ const createNewTodosArrItem = (itemContent) => {
 
 // Get todos object id
 const getTodosObjectId = (id) => {
+    console.log(id)
     // console.log(`${id.slice(0, 3)}, ${id.slice(4, 7)} ${id.slice(8, 10)}, ${id.slice(11)}`)
-    return `${id.slice(0, 3)} ${id.slice(4, 6)}, ${id.slice(7)}`
+    return `${id.slice(0, 5)} ${id.slice(6, 8)}, ${id.slice(9)}`
 }
 
 // Generate todo wrapper DOM
