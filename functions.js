@@ -157,7 +157,9 @@ const getEmptyTodosObjectIndex = (todosObject) => {
 
 // Delete empty todos object from DOM
 const removeEmptyTodosObjectFromDOM = (todos, index) => {
-    todos.splice(index, 1)
+    if (index > -1) {
+        todos.splice(index, 1)
+    }
 }
 
 // Save todos to localStorage
