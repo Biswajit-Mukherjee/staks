@@ -116,6 +116,9 @@ const hideFullScreenSearch = (mobileSearchButton, headerLogo, headerSearch) => {
 // Get current day's date
 const getCurrentDate = () => {
     const d = new Date()
+
+    const dayOfWeek = d.toString().slice(0, 3)
+
     let day = d.getDate()
     const months =["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     const month = months[d.getMonth()]
