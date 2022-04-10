@@ -10,6 +10,7 @@ A simple and easy to use web-based todo appliation.
  - [Google Chrome Downloads tab](chrome://downloads/)
  - [Logo](https://iconscout.com/icon/layer-1957315)
  - [Icons](https://fontawesome.com/icons)
+ - [Date API](https://day.js.org/)
  - [UUID library](https://github.com/uuidjs/uuid)
  
  
@@ -17,7 +18,7 @@ A simple and easy to use web-based todo appliation.
 
 ## Authors
 
-- [@biswajitmukherjee](https://github.com/Biswajit-Mukherjee)
+- [Biswajit Mukherjee](https://github.com/Biswajit-Mukherjee)
 
 
 ## Installation
