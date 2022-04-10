@@ -6,10 +6,10 @@ A simple and easy to use web-based todo appliation.
 
 ## Acknowledgements
 
- - [Google Chrome History tab](chrome://history/)
- - [Google Chrome Downloads tab](chrome://downloads/)
+ - [Google Chrome (For UI inspiration)](https://www.google.com/intl/en_in/chrome/)
  - [Logo](https://iconscout.com/icon/layer-1957315)
  - [Icons](https://fontawesome.com/icons)
+ - [Colors](https://coolors.co/)
  - [Date API](https://day.js.org/)
  - [UUID library](https://github.com/uuidjs/uuid)
  
