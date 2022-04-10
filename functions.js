@@ -118,8 +118,7 @@ const getCurrentDate = () => {
     const d = new Date()
 
     const dayOfWeek = d.toString().slice(0, 3)
-
-    let day = d.getDate()
+    const day = d.getDate()
     const months =[
         "January",
         "February",
@@ -136,8 +135,6 @@ const getCurrentDate = () => {
     ]
     const month = months[d.getMonth()]
     const year = d.getFullYear()
-
-    // day = day.length > 1 ? day : `0${day}`
 
     return {
         dayOfWeek: dayOfWeek,
