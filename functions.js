@@ -220,9 +220,13 @@ const createNewTodosArrItem = (itemContent) => {
 
 // Get todos object id
 const getTodosObjectId = (id) => {
-    console.log(id)
-    // console.log(`${id.slice(0, 3)}, ${id.slice(4, 7)} ${id.slice(8, 10)}, ${id.slice(11)}`)
-    return `${id.slice(0, 5)} ${id.slice(6, 8)}, ${id.slice(9)}`
+    const timestampArray = id.split('-')
+
+    const month = timestampArray[0]
+    const day = timestampArray[1]
+    const year = timestampArray[2]
+
+    return `${month} ${day}, ${year}`
 }
 
 // Generate todo wrapper DOM
