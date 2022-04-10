@@ -137,7 +137,7 @@ const getCurrentDate = () => {
     const month = months[d.getMonth()]
     const year = d.getFullYear()
 
-    day = day.length > 1 ? day : `0${day}`
+    // day = day.length > 1 ? day : `0${day}`
 
     return {
         dayOfWeek: dayOfWeek,
