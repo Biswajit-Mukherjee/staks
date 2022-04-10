@@ -115,31 +115,38 @@ const hideFullScreenSearch = (mobileSearchButton, headerLogo, headerSearch) => {
 
 // Get current day's date
 const getCurrentDate = () => {
-    const d = new Date()
+    // const d = new Date()
 
-    const dayOfWeek = d.toString().slice(0, 3)
-    const day = d.getDate()
-    const months =[
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ]
-    const month = months[d.getMonth()]
-    const year = d.getFullYear()
+    // const dayOfWeek = d.toString().slice(0, 3)
+    // const dayOfMonth = d.getDate()
+    // const months =[
+    //     "January",
+    //     "February",
+    //     "March",
+    //     "April",
+    //     "May",
+    //     "June",
+    //     "July",
+    //     "August",
+    //     "September",
+    //     "October",
+    //     "November",
+    //     "December"
+    // ]
+    // const month = months[d.getMonth()]
+    // const year = d.getFullYear()
+
+    const now = dayjs()
+    const nowFormatted = now.format('MMMM DD, YYYY').toString()
+    const month = nowFormatted.split(' ')[0]
+    const dayOfMonth = now.date()
+    const dayOfWeek = now.day()
+    const year = now.year()
 
     return {
         dayOfWeek: dayOfWeek,
         month: month,
-        day: day,
+        day: dayOfMonth,
         year: year
     }
 }
@@ -198,21 +205,40 @@ const addElementToArray = (array, item) => {
 
 // Create new todos object
 const createNewTodosObject = (id) => {
+    const now = dayjs()
+    const nowTimestamp = now.valueOf()
+
     return {
         id: id,
-        timestamp: Date.now(),
+        timestamp: nowTimestamp,
         todosArr: []
     }
+
+    // return {
+    //     id: id,
+    //     timestamp: Date.now(),
+    //     todosArr: []
+    // }
 }
 
 // Create new todosArr property item
 const createNewTodosArrItem = (itemContent) => {
+    const now = dayjs()
+    const nowTimestamp = now.valueOf()
+
     return {
         id: uuidv4(),
-        timestamp: Date.now(),
+        timestamp: nowTimestamp,
         content: itemContent,
         completed: false
     }
+
+    // return {
+    //     id: uuidv4(),
+    //     timestamp: Date.now(),
+    //     content: itemContent,
+    //     completed: false
+    // }
 }
 
 // Get todos object id
