@@ -9,9 +9,9 @@
     z-index: 10;
     width: 100%;
     height: var(--header-height);
+    box-shadow: var(--todos-box-shadow);
     background-color: var(--header-bg);
     color: var(--primary-color);
-    box-shadow: var(--todos-box-shadow);
 }
 
 .todo-header > * {
@@ -546,6 +546,7 @@ body.dark-mode-on .todos .todos__todo-wrapper .todo .todo__actions .todo__action
     .menu-wrapper {
         min-width: 40%;
         margin-top: var(--header-height);
+        box-shadow: 0 0 8px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 0 24px 0 rgba(var(--todos-shadow-color-rgb-dark), .15);
         position: fixed;
         top: 0;
         left: 0;
