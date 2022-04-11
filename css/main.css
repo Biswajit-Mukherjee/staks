@@ -319,6 +319,10 @@
     margin: auto;
 }
 
+.new-todo--cta .btn-content .new-todo__text {
+    padding: 0 2px;
+}
+
 /* Todos styling */
 .todos {
     width: 100%;
@@ -578,6 +582,31 @@ body.dark-mode-on .todos .todos__todo-wrapper .todo .todo__actions .todo__action
     .todo-main .content-wrapper .msgs .no-todos-msg .no-todos-msg__text,
     .todo-main .content-wrapper .msgs .not-found-msg .not-found-msg__text {
         font-size: 105%;
+    }
+
+    .new-todo--cta {
+        background-color: transparent;
+        color: var(--clr-prim-400);
+        padding: 0;
+        border: none;
+        border-radius: 0;
+    }
+
+    .new-todo--cta:hover {
+        background-color: transparent;
+        color: var(--clr-prim-500);
+    }
+
+    .new-todo--cta:focus {
+        outline: none;
+    }
+
+    .new-todo--cta .btn-content i {
+        font-size: 1.75rem;
+    }
+
+    .new-todo--cta .btn-content .new-todo__text {
+        display: none;
     }
 }
 
