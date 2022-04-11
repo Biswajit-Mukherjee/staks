@@ -395,6 +395,22 @@
     width: 3.5rem;
     height: 3.5rem;
     margin: auto;
+    background-color: transparent;
+    animation-name: scaleIn;
+    animation-delay: .3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
 }
 
 .gm--modal .gm__body .body__content {
@@ -416,7 +432,6 @@
 
 .gm--modal .gm__body .body__action {
     padding-bottom: .25rem;
-    margin: auto;
 }
 
 .gm--modal .gm__body .body__action .get-started-btn {
@@ -426,7 +441,8 @@
     color: var(--white-prim);
     font-size: 1.25rem;
     font-weight: 600;
-    padding: .6rem 1.2rem;
+    padding: .6rem 1.8rem;
+    margin: auto;
 }
 
 .gm--modal .gm__body .body__action .get-started-btn i {

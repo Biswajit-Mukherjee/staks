@@ -55,7 +55,9 @@ const todoDeletionNotificationSuccessModal = document.querySelector('#todo-delet
 const todoCompletedDeletionAllNotificationSuccessModal = document.querySelector('#todo-completed-all-deletion-success-nm')
 
 // Get saved todos
-let todos = getSavedTodos()
+// let todos = getSavedTodos()
+
+let todos = []
 
 // Setup filters object
 let filters = {
