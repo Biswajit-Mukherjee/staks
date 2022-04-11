@@ -115,27 +115,6 @@ const hideFullScreenSearch = (mobileSearchButton, headerLogo, headerSearch) => {
 
 // Get current day's date
 const getCurrentDate = () => {
-    // const d = new Date()
-
-    // const dayOfWeek = d.toString().slice(0, 3)
-    // const dayOfMonth = d.getDate()
-    // const months =[
-    //     "January",
-    //     "February",
-    //     "March",
-    //     "April",
-    //     "May",
-    //     "June",
-    //     "July",
-    //     "August",
-    //     "September",
-    //     "October",
-    //     "November",
-    //     "December"
-    // ]
-    // const month = months[d.getMonth()]
-    // const year = d.getFullYear()
-
     const now = dayjs()
     const nowFormatted = now.format('MMMM D, YYYY').toString()
     const month = nowFormatted.split(' ')[0]
@@ -213,12 +192,6 @@ const createNewTodosObject = (id) => {
         timestamp: nowTimestamp,
         todosArr: []
     }
-
-    // return {
-    //     id: id,
-    //     timestamp: Date.now(),
-    //     todosArr: []
-    // }
 }
 
 // Create new todosArr property item
