@@ -137,7 +137,7 @@ const getCurrentDate = () => {
     // const year = d.getFullYear()
 
     const now = dayjs()
-    const nowFormatted = now.format('MMMM DD, YYYY').toString()
+    const nowFormatted = now.format('MMMM D, YYYY').toString()
     const month = nowFormatted.split(' ')[0]
     const dayOfMonth = now.date()
     const dayOfWeek = now.day()
