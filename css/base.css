@@ -44,13 +44,16 @@
     --modal-bg: var(--main-bg-light);
     --modal-color: var(--primary-color-light);
     --modal-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 3px 6px 1px rgba(var(--todos-shadow-color-rgb), .15);
-    --todo-input-bg: var(--main-bg-light);
-    --todo-input-color: var(--primary-color);
+    --app-repo-link-border-color-light: rgba(0, 0, 0, .06);
+    --app-repo-link-border-color-dark: rgba(150, 150, 150, .06);
+    --app-repo-link-border-color: var(--app-repo-link-border-color-light);
 
     /* Todos */
     --summary-border-light: #cbcbcb;
     --summary-border-dark: #3d3d3d;
     --summary-border: var(--summary-border-light);
+    --todo-input-bg: var(--main-bg-light);
+    --todo-input-color: var(--primary-color);
     --todo-bg-light: hsl(0, 0%, 90%);
     --todo-bg-dark: hsl(0, 0%, 19%);
     --todo-bg: var(--todo-bg-light);
@@ -78,7 +81,6 @@
     --todos-shadow-color-rgb-dark: 0, 4, 7;
     --todos-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 1px 4px 0 rgba(var(--todos-shadow-color-rgb), .15);
     --todos-box-shadow-dark: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 1px 3px 1px rgba(var(--todos-shadow-color-rgb-dark), .15);
-
 
     --todo-text-color: hsl(240, 30%, 10%);
     --todo-content-gap: 1rem;

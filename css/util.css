@@ -16,6 +16,7 @@
     font-weight: 700;
     color: var(--clr-prim-400);
     line-height: normal;
+    vertical-align: middle;
 }
 
 #gm-modal .app-title {
@@ -266,6 +267,30 @@
     background-color: var(--clr-prim-500);
 }
 
+/* About app modal */
+.modal.about-app-modal .modal__body {
+    text-align: left;
+    font-size: 92.5%;
+    padding: 0;
+}
+
+.modal.about-app-modal .modal__body > * {
+    padding: 1rem;
+}
+
+.modal.about-app-modal .modal__body .content {
+    font-size: 90%;
+}
+
+.modal.about-app-modal .modal__body .app-github-repo-link {
+    border-block: 1px solid var(--app-repo-link-border-color);
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Todo details modal */
 .todo-info-modal {
     padding: 1rem;
@@ -475,6 +500,7 @@ body.dark-mode-on {
     --todos-box-shadow: var(--todos-box-shadow-dark);
     --modal-color: var(--primary-color-dark);
     --modal-close-bg: var(--modal-close-bg-dark);
+    --app-repo-link-border-color: var(--app-repo-link-border-color-dark);
     --todo-input-bg: var(--header-bg-dark);
     --todo-bg: var(--todo-bg-dark);
     --todo-icon-border-color-dark: #242424;
