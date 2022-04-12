@@ -570,6 +570,14 @@ body.dark-mode-on .todos .todos__todo-wrapper .todo .todo__actions .todo__action
         min-width: 60%;
     }
 
+    .header__logo .logo__menu--mob:hover {
+        color: inherit;
+    }
+
+    .header__logo .logo__menu--mob:active {
+        color: var(--clr-prim-300);
+    }
+
     .todos-summary .content .todos-summary__message {
         font-size: 95%;
     }
