@@ -1103,3 +1103,18 @@ const removeCompletedTodos = (todos) => {
 
     saveTodos(todos)
 }
+
+// Check if array has completed todos
+const hasCompletedTodos = (todos) => {
+    let completedTodos = 0
+
+    todos.forEach((todosObject) => {
+        todosObject.todosArr.forEach((todo) => {
+            if (todo.completed) {
+                completedTodos++
+            }
+        })
+    })
+
+    return completedTodos
+}

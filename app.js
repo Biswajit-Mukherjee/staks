@@ -279,10 +279,17 @@ removeCompletedOption.addEventListener('click', () => {
     })
 
     removeAllConfirmationModalConfirmButton.addEventListener('click', () => {
-        removeCompletedTodos(todos)
-        // reloadPage()
-        showNotificationModal(overlay, todoCompletedDeletionAllNotificationSuccessModal)
-        renderTodos(todosSummaryMessageContainer, todos, filters)
-        closeModal(overlay, removeAllConfirmationModal)
+        const completedTodos = hasCompletedTodos(todos)
+
+        if (completedTodos > 0) {
+            removeCompletedTodos(todos)
+            // reloadPage()
+            showNotificationModal(overlay, todoCompletedDeletionAllNotificationSuccessModal)
+            renderTodos(todosSummaryMessageContainer, todos, filters)
+            closeModal(overlay, removeAllConfirmationModal)
+        }   else {
+            closeModal(overlay, removeAllConfirmationModal)
+            renderTodos(todosSummaryMessageContainer, todos, filters)
+        }
     })
 })
