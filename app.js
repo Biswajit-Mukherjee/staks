@@ -85,6 +85,12 @@ setAppTheme(themeCheckbox.checked)
 // Toggle mobile menu
 mobileMenuButton.addEventListener('click', () => {
     toggleClass(menuWrapper, 'toggle-menu')
+
+    if (menuWrapper.classList.contains('toggle-menu')) {
+        mobileMenuButton.style.color = 'var(--clr-prim-300)'
+    }   else {
+        mobileMenuButton.style.color = 'inherit'
+    }
 })
 
 // Search todos
