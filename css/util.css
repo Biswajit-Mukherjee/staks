@@ -284,11 +284,18 @@
 
 .modal.about-app-modal .modal__body .app-github-repo-link {
     border-block: 1px solid var(--app-repo-link-border-color);
+    background-color: transparent;
+    color: inherit;
     cursor: pointer;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.modal.about-app-modal .modal__body .app-github-repo-link:hover,
+.modal.about-app-modal .modal__body .app-github-repo-link:active {
+    background-color: var(--app-repo-link-border-color);
 }
 
 /* Todo details modal */
