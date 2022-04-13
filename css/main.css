@@ -546,7 +546,7 @@ body.dark-mode-on .todos .todos__todo-wrapper .todo .todo__actions .todo__action
     .header__search {
         transform: translateX(100vw);
         transition: transform .3s ease-out;
-        padding: 0 .5rem;
+        padding: 0 1rem;
     }
 
     .header__search .search-wrapper .search .search__searchbtn {
