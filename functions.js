@@ -1,7 +1,13 @@
 // Get app theme from localStorage
 const getAppTheme = () => {
     let theme = localStorage.getItem('app-dark-mode')
-    return theme !== null ? JSON.parse(theme) : false
+    
+    try {
+        // Truthy-falsy logic
+        return theme ? JSON.parse(theme) : false
+    }   catch (e) {
+        return false
+    }
 }
 
 // Save app theme to localStorage
@@ -142,7 +148,13 @@ const getPendingTodos = (todosArray) => {
 // Get todos from localStorage
 const getSavedTodos = () => {
     let savedTodos = localStorage.getItem('app-todos')
-    return savedTodos !== null ? JSON.parse(savedTodos) : []
+
+    try {
+        // Truthy-falsy logic
+        return savedTodos ? JSON.parse(savedTodos) : []
+    }   catch (e) {
+        return []
+    }
 }
 
 // Check if todos object is empty
