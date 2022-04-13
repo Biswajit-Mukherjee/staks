@@ -205,13 +205,6 @@ const createNewTodosArrItem = (itemContent) => {
         content: itemContent,
         completed: false
     }
-
-    // return {
-    //     id: uuidv4(),
-    //     timestamp: Date.now(),
-    //     content: itemContent,
-    //     completed: false
-    // }
 }
 
 // Get todos object id
@@ -261,7 +254,7 @@ const generateTodoElementDOM = (todoWrapperNode, todosObject, todosArrElement) =
     const todo = document.createElement('div')
     todo.setAttribute('class', 'todo')
 
-    // Add completed class to todo if it is completed
+    // Add completed class to todo if it is completed else add incomplete class
     todosArrElement.completed ? addClassToElement(todo, 'completed') : removeClassFromElement(todo, 'completed')
 
     const todoIconDiv = document.createElement('div')
