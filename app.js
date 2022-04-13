@@ -1,3 +1,5 @@
+'use strict'
+
 const bodyElement = document.body
 
 const greetingsModal = document.querySelector('#gm-modal')

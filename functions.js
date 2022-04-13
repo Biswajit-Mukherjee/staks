@@ -1,3 +1,5 @@
+'use strict'
+
 // Get app theme from localStorage
 const getAppTheme = () => {
     let theme = localStorage.getItem('app-dark-mode')
