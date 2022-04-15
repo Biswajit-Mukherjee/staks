@@ -270,7 +270,7 @@
 /* About app modal */
 .modal.about-app-modal .modal__body {
     text-align: left;
-    font-size: 92.5%;
+    font-size: 90%;
     padding: 0;
 }
 
@@ -279,7 +279,7 @@
 }
 
 .modal.about-app-modal .modal__body .content {
-    font-size: 90%;
+    font-size: 87%;
 }
 
 .modal.about-app-modal .modal__body .app-github-repo-link {
