@@ -274,7 +274,7 @@
 /* Todos summary styling */
 .todos-summary {
     height: 4.25rem;
-    border-bottom: 1px solid var(--summary-border);
+    border-bottom: 1px solid var(--modal-border-color);
 }
 
 .todos-summary .content {

@@ -41,6 +41,7 @@
     --modal-min-height: 224px;
     --modal-logo-sz: var(--logo-sz);
     --modal-border-radius: var(--todos-border-radius);
+    --modal-border-color: #d8d8d8;
     --modal-bg: var(--main-bg-light);
     --modal-color: var(--primary-color-light);
     --modal-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 3px 6px 1px rgba(var(--todos-shadow-color-rgb), .15);
@@ -49,9 +50,6 @@
     --app-repo-link-border-color: var(--app-repo-link-border-color-light);
 
     /* Todos */
-    --summary-border-light: #cbcbcb;
-    --summary-border-dark: #3d3d3d;
-    --summary-border: var(--summary-border-light);
     --todo-input-bg: var(--main-bg-light);
     --todo-input-color: var(--primary-color);
     --todo-bg-light: hsl(0, 0%, 90%);

@@ -504,13 +504,13 @@ body.dark-mode-on {
     --header-bg: var(--header-bg-dark);
     --main-bg: var(--main-bg-dark);
     --primary-color: var(--primary-color-dark);
-    --summary-border: var(--summary-border-dark);
     --modal-bg: var(--main-bg-dark);
     --modal-border-color: var(--summary-border);
     --todos-border-color: var(--modal-border-color);
     --todos-bg: var(--todos-bg-dark);
     --todos-box-shadow: var(--todos-box-shadow-dark);
     --modal-color: var(--primary-color-dark);
+    --modal-border-color: #535353;
     --modal-close-bg: var(--modal-close-bg-dark);
     --app-repo-link-border-color: var(--app-repo-link-border-color-dark);
     --todo-input-bg: var(--header-bg-dark);
