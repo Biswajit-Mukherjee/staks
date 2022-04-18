@@ -19,7 +19,7 @@
     --header-bg-light: var(--white-prim);
     --header-bg-dark: hsl(0, 0%, 7%);
     --header-bg: var(--header-bg-light);
-    --main-bg-light: hsl(0, 0%, 98%);
+    --main-bg-light: hsl(0, 0%, 99%);
     --main-bg-dark: hsl(0, 0%, 17%);
     --main-bg: var(--main-bg-light);
     --primary-bg-light: var(--white-prim);
@@ -68,7 +68,7 @@
     --todos-border-radius: .5rem;
     --todos-border-color: var(--modal-border-color);
     --todos-bg-light: var(--header-bg-light);
-    --todos-bg-dark: hsl(0, 0%, 24%);
+    --todos-bg-dark: hsl(0, 0%, 25%);
     --todos-bg: var(--todos-bg-light);
     --todo-height: 4rem;
     --todo-icon-sz: 1.5rem;
@@ -77,10 +77,10 @@
     --todo-icon-border-color-dark: var(--modal-border-color);
     --todo-icon-border-color: var(--todo-icon-border-color-light);
     --todo-max-width: var(--todos-max-width);
-    --todos-shadow-color-rgb: 50, 54, 57;
+    --todos-shadow-color-rgb: 60, 64, 67;
     --todos-shadow-color-rgb-dark: 0, 4, 7;
-    --todos-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 1px 4px 0 rgba(var(--todos-shadow-color-rgb), .15);
-    --todos-box-shadow-dark: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 1px 3px 1px rgba(var(--todos-shadow-color-rgb-dark), .15);
+    --todos-box-shadow: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb), .3), 0 1px 4px 1px rgba(var(--todos-shadow-color-rgb), .15);
+    --todos-box-shadow-dark: 0 1px 2px 0 rgba(var(--todos-shadow-color-rgb-dark), .3), 0 1px 4px 1px rgba(var(--todos-shadow-color-rgb-dark), .15);
 
     --todo-text-color: hsl(240, 30%, 10%);
     --todo-content-gap: 1rem;
