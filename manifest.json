@@ -1,0 +1,22 @@
+{
+    "short_name": "Staks",
+    "name": "Staks",
+    "icons": [
+        {
+            "src": "./img/logo.ico",
+            "type": "image/ico",
+            "size": "192x192"
+        },
+        {
+            "src": "./img/logo.ico",
+            "type": "image/ico",
+            "size": "512x512"
+        }
+    ],
+    "theme_color": "#7765e3",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "./index.html",
+    "description": "A simple and easy to use web-based todo app."
+}

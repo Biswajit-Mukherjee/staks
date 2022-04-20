@@ -282,6 +282,21 @@
     font-size: 87%;
 }
 
+.modal.about-app-modal .modal__body .recommend {
+    font-size: 85%;
+}
+
+.modal.about-app-modal .modal__body .recommend span {
+    color: var(--clr-prim-500);
+    font-size: 125%;
+    padding-right: 2px;
+}
+
+.modal.about-app-modal .modal__body .recommend a {
+    color: var(--clr-prim-400);
+    font-size: 125%;
+}
+
 .modal.about-app-modal .modal__body .app-github-repo-link {
     border-block: 1px solid var(--app-repo-link-border-color);
     background-color: transparent;

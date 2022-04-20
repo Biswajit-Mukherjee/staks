@@ -298,6 +298,7 @@ removeCompletedOption.addEventListener('click', () => {
         }   else {
             closeModal(overlay, removeAllConfirmationModal)
             renderTodos(todosSummaryMessageContainer, todos, filters)
+            reloadPage()
         }
     })
 })
