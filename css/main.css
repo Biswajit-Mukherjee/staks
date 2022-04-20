@@ -327,12 +327,20 @@
 .todos {
     width: 100%;
     max-width: var(--todos-max-width);
-    margin: 1rem auto;
+    margin: .5rem auto;
     display: grid;
     border-radius: var(--todos-border-radius);
     box-shadow: var(--todos-box-shadow);
     background-color: var(--todos-bg);
     color: var(--primary-color);
+}
+
+.todos:first-of-type {
+    margin: 2rem auto .5rem;
+}
+
+.todos:last-of-type {
+    margin-bottom: 2rem;
 }
 
 .todos > * {
