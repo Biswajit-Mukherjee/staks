@@ -13,10 +13,11 @@
             "size": "512x512"
         }
     ],
-    "theme_color": "#7765e3",
-    "background_color": "#644edf",
+    "start_url": "./index.html",
+    "background_color": "#ffffff",
+    "orientation": "any",
     "display": "standalone",
     "scope": "/",
-    "start_url": "./index.html",
+    "theme_color": "#5d47d6",
     "description": "A simple and easy to use web-based todo app."
 }
