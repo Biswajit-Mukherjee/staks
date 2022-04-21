@@ -211,7 +211,9 @@ newTodoButton.addEventListener('click', () => {
             }
         }
 
-        showNotificationModal(overlay, todoCreationNotificationSuccessModal)
+        if (todoText.length > 0) {
+            showNotificationModal(overlay, todoCreationNotificationSuccessModal)
+        }
         reloadPageAfterDelay(delay)
     })
 })
