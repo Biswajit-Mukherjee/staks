@@ -13,13 +13,13 @@
     --logo-sz: 2rem;
 
     /* Primary and secondary colors */
-    --white-prim: #fff;
+    --white-prim: white;
     --white-sec: #f5f5f5;
     --white-ter: #f0f0f0;
     --header-bg-light: var(--white-prim);
     --header-bg-dark: hsl(0, 0%, 7%);
     --header-bg: var(--header-bg-light);
-    --main-bg-light: hsl(0, 0%, 99.3%);
+    --main-bg-light: hsl(0, 0%, 99.9%);
     --main-bg-dark: hsl(0, 0%, 20%);
     --main-bg: var(--main-bg-light);
     --primary-bg-light: var(--white-prim);
