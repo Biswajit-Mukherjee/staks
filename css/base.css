@@ -77,7 +77,7 @@
     --todo-max-width: var(--todos-max-width);
 
     --todos-shadow-color-rgb: 150, 154, 157;
-    --todos-shadow-color-rgb-dark: 10, 14, 17;
+    --todos-shadow-color-rgb-dark: 0, 4, 7;
     --todos-box-shadow: rgba(var(--todos-shadow-color-rgb), .3) 0 1px 2px 0, rgba(var(--todos-shadow-color-rgb), .15) 0 2px 6px 2px;
     --todos-box-shadow-dark: rgba(var(--todos-shadow-color-rgb-dark), .3) 0 1px 2px 0, rgba(var(--todos-shadow-color-rgb-dark), .15) 0 2px 6px 2px;
 
