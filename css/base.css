@@ -20,7 +20,7 @@
     --header-bg-dark: hsl(0, 0%, 7%);
     --header-bg: var(--header-bg-light);
     --main-bg-light: var(--white-prim);
-    --main-bg-dark: hsl(0, 0%, 20%);
+    --main-bg-dark: hsl(0, 0%, 18%);
     --main-bg: var(--main-bg-light);
     --primary-bg-light: var(--white-prim);
     --primary-bg-dark: #232323;
@@ -66,7 +66,7 @@
     --todos-border-radius: .5rem;
     --todos-border-color: var(--modal-border-color);
     --todos-bg-light: var(--header-bg-light);
-    --todos-bg-dark: hsl(0, 0%, 25%);
+    --todos-bg-dark: hsl(0, 0%, 23%);
     --todos-bg: var(--todos-bg-light);
     --todo-height: 4rem;
     --todo-icon-sz: 1.5rem;
