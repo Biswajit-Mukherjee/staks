@@ -1,7 +1,7 @@
 
 # Staks
 
-A simple and easy to use web-based todo appliation.
+A simple and easy to use web-based todo application.
 
 
 ## Acknowledgements
@@ -21,9 +21,6 @@ A simple and easy to use web-based todo appliation.
 - [Biswajit Mukherjee](https://github.com/Biswajit-Mukherjee)
 
 
-## Installation
-
-No installation required. It is a web based applictaion.
 
     
 ## License
