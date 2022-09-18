@@ -60,14 +60,3 @@ Light mode
 
 For support, email biswajitmukherjee549@gmail.com.
 
-
-## Lessons Learned
-
-- Implementing responsive web layouts using HTML & CSS
-- Adding user interactions using Javascript
-- Integrating app with backend using broswer localStorage
-- Solving real world problems using Data Structures
-- Implementing Dark mode
-- Integrating app with third-party libraries
-
-
